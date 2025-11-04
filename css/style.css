@@ -1,6 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg-color: #210A01;
+    --orange-gradient: linear-gradient(90deg, #FFA228 0%, #FF6432 100%);
+}
 
+body {
+    background-color: var(--bg-color);
+    font-family: 'Muller', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+    background: var(--orange-gradient);
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
