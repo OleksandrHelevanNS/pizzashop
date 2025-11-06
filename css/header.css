@@ -135,6 +135,7 @@ header {
     width: 164px;
     border-radius: 20px;
     font-size: var(--font-size-l);
+    color: var(--primary-text-color);
 
 }
 
