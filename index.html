@@ -5,11 +5,58 @@
     <title>PizzaShop</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
-<h1>
-    pizzashop
-</h1>
+<header>
+    <div class="header__container">
+        <h1 class="header__logo">pizzashop</h1>
+
+        <nav class="header__nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link nav__link--active" href="#home">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#menu">Menu</a></>
+                <li class="nav__item"><a class="nav__link" href="#events">Events</a></li>
+                <li class="nav__item"><a class="nav__link" href="#about">About us</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__actions" id="actions">
+            <a class="header__login" href="#" id="login">Log in</a>
+            <a class="header__bag" href="#">
+                <img class="header__bag_img" src="img/icons/bag.svg" alt="">
+            </a>
+            <button class="header__burger" id="burger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+
+    </div>
+</header>
+
+<main>
+    <section id="home" style="margin: 5000px 0">
+        <h2>Home</h2>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+    </section>
+
+    <section id="events" style="margin: 5000px 0">
+        <h2>Events</h2>
+    </section>
+
+    <section id="about">
+        <h2>About us</h2>
+    </section>
+</main>
+<footer></footer>
+<script src="js/navigation.js"></script>
+<script src="js/burger-menu.js"></script>
 </body>
 </html>
