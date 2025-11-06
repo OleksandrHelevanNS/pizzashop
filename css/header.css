@@ -179,7 +179,7 @@ main {
     margin-top: 20px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
 
     .header__container {
         justify-content: space-between;
@@ -234,7 +234,7 @@ main {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 500px) {
     .header__container {
         padding: 8px;
     }
