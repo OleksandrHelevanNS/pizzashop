@@ -5,7 +5,7 @@
     <title>PizzaShop</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
@@ -31,16 +31,50 @@
                 <span></span>
                 <span></span>
             </button>
-
         </div>
-
-
     </div>
 </header>
 
 <main>
-    <section id="home" style="margin: 5000px 0">
-        <h2>Home</h2>
+    <section id="home" class="hero-section">
+        <div class="hero-section__description-block">
+            <h1 class="hero-section__title title">
+                The Fastest <span class="animated-arrow"></span><br>
+                Pizza
+                <img class="description-text__lightning-icon" alt="lighting-icon" src="img/icons/lighting.svg"> Delivery
+            </h1>
+            <p class="description__text">
+                We will deliver juicy pizza for your family in 30 minutes, if the courier is late -
+                <span>pizza is free!</span>
+            </p>
+
+            <div class="hero__video-block">
+                <p class="hero__video-title">Cooking process:</p>
+                <div class="hero__video-wrapper">
+                    <iframe
+                            class="hero__video"
+                            src="https://www.youtube.com/embed/F_UmiKMwRwA"
+                            title="Cooking process"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="hero-section__switch">
+                <button class="switch__btn">To order</button>
+                <button class="switch__btn">Pizza-Menu</button>
+            </div>
+        </div>
+        <div class="hero-section__banner">
+            <img class="banner__pizza-emoji" src="img/emoji/pizza.png" alt="pizza-emoji">
+
+            <picture class="banner__img">
+                <img class="banner__img-item" src="img/pizza-banner.png" alt="pizza banner">
+            </picture>
+            <img class="banner__potatoes-emoji" src="img/emoji/potatoes-free.png" alt="potatoes-free-emoji">
+
+        </div>
+
     </section>
 
     <section id="menu">
