@@ -41,9 +41,10 @@ header {
 .header__container {
     height: 80px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    padding: 0 64px;
     max-width: 1980px;
     backdrop-filter: blur(20px);
 }
@@ -150,7 +151,9 @@ header {
 }
 
 main {
-    padding-top: 88px;
+    padding-top: 120px;
+    max-width: 1980px;
+    margin: 0 auto;
 }
 
 .header__burger {
@@ -183,10 +186,7 @@ main {
 
 @media (max-width: 1024px) {
 
-    .header__container {
-        justify-content: space-between;
-        padding: 24px;
-    }
+
 
     .header__burger {
         height: 40px;
@@ -238,7 +238,7 @@ main {
 
 @media (max-width: 500px) {
     .header__container {
-        padding: 8px;
+        padding: 0 16px;
     }
 }
 
@@ -251,9 +251,9 @@ main {
 
 .hero-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    gap: 64px;
+    padding: 0 64px;
 }
 
 .hero-section__description-block {
@@ -295,6 +295,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: -1;
 }
 
 .banner__img {
@@ -303,7 +304,6 @@ main {
     border-radius: 48px;
     overflow: hidden;
     padding: 0;
-    z-index: -1;
 }
 
 .banner__img-item {
@@ -312,17 +312,17 @@ main {
 }
 
 .banner__pizza-emoji, .banner__potatoes-emoji {
-    width: 240px;
+    width: 160px;
     height: auto;
     position: absolute;
 }
 
 .banner__potatoes-emoji {
-    bottom: -100px;
-    left: -100px;
+    bottom: -60px;
+    left: -60px;
 }
 
 .banner__pizza-emoji {
-    top: -100px;
-    right: -100px;
+    top: -60px;
+    right: -60px;
 }
