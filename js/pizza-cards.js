@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "img/pizzas/pizza_img_5.png",
         },
         {
-            name: "Mushroom Deluxe",
+            name: "Mushrooms",
             type: "Mushroom",
             ingredients: ["mushrooms", "mozzarella", "white sauce", "onion", "parsley"],
             price: 8.95,
