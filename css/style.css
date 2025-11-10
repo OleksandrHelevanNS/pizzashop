@@ -1,6 +1,7 @@
 :root {
     --bg-color: #1E0D00;
     --primary-orange-color: #FF6432;
+    --box-shadow-card-color: #FF6B000F;
 
 
     --primary-text-color: #fff;
@@ -34,7 +35,7 @@ body {
 header {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .header__container {
@@ -193,6 +194,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 0 64px;
+    margin-bottom: 100px;
 }
 
 .hero-section__description-block {
@@ -326,7 +328,6 @@ main {
     to { opacity: 1; }
 }
 
-
 .hero-section__switch {
     position: relative;
     display: flex;
@@ -373,6 +374,46 @@ main {
 }
 
 .switch__btn--active {
+    color: var(--primary-text-color);
+}
+
+.description__down-bock{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-content__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.buttons__menu-filter-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary-text-color);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-normal);
+    padding: 12px;
+    width: 180px;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px var(--box-shadow-card-color);
+}
+
+.buttons__menu-filter-btn--active {
+    background: var(--orange-gradient);
     color: var(--primary-text-color);
 }
 
@@ -435,6 +476,14 @@ main {
 
     .header__burger.active span:nth-child(3) {
         transform: rotate(45deg) translateX(-15px);
+    }
+
+    .hero-section{
+        flex-direction: column-reverse;
+        gap: 100px;
+    }
+    .hero__video-block {
+        flex-direction: column-reverse;
     }
 }
 
