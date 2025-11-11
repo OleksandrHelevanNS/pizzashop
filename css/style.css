@@ -34,20 +34,6 @@ body {
     color: var(--primary-text-color);
 }
 
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-gradient);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--orange-gradient);
-    border-radius: 8px;
-}
-
-
 /*header*/
 header {
     position: fixed;
@@ -230,10 +216,10 @@ main {
 }
 
 .hero-section__description-block {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
 }
 
 .description-text__lightning-icon {
@@ -257,10 +243,11 @@ main {
     }
 }
 
-.arrow-wrapper {
+.hero-section__arrow-bottom, .hero-section__arrow-top {
     position: absolute;
     overflow: hidden;
     width: 0;
+    max-width: 145px;
     animation: reveal 3s ease forwards;
 }
 
@@ -761,7 +748,11 @@ main {
 }
 
 @media (max-width: 500px) {
+    header {
+        height: 120px;
+    }
     .header__container {
+        height: 120px;
         padding: 0 16px;
     }
 }
