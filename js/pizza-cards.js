@@ -131,14 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <div class="pizza-card__pizza-calculator">
                         <p class="pizza-calculator__remove">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" fill="white"
                                  viewBox="0 -960 960 960" width="24px">
                                 <path d="M240-440v-80h480v80H240Z"/>
                             </svg>
                         </p>
                         <p class="pizza-calculator__total">1</p>
                         <p class="pizza-calculator__add">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" fill="white"
                                  viewBox="0 -960 960 960" width="24px">
                                 <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
                             </svg>
