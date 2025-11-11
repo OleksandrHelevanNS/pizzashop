@@ -258,12 +258,20 @@ main {
 }
 
 .arrow-wrapper {
-    left: 340px;
-    top:20px;
     position: absolute;
     overflow: hidden;
     width: 0;
     animation: reveal 3s ease forwards;
+}
+
+.hero-section__arrow-top{
+    left: 340px;
+    top:20px;
+
+}
+.hero-section__arrow-bottom{
+    bottom: -120px;
+    left: 400px;
 }
 
 @keyframes reveal {
@@ -272,16 +280,12 @@ main {
         opacity: 0;
     }
     to {
-        width: 120px;
+        width: 100%;
         opacity: 1;
     }
 }
 
-.arrow-curve svg {
-    width: 104px;
-    height: 36px;
-    display: block;
-}
+
 
 .hero-section__banner {
     display: flex;
