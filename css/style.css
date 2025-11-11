@@ -34,18 +34,19 @@ body {
     color: var(--primary-text-color);
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: 8px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
     background: var(--bg-gradient);
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background: var(--orange-gradient);
     border-radius: 8px;
 }
+
 
 
 /*header*/
