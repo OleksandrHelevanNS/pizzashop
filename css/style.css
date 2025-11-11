@@ -311,6 +311,10 @@ main {
     width: 160px;
     height: auto;
     position: absolute;
+    &:hover{
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
 }
 
 .banner__potatoes-emoji {
