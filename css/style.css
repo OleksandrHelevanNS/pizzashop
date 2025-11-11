@@ -34,6 +34,20 @@ body {
     color: var(--primary-text-color);
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-gradient);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--orange-gradient);
+    border-radius: 8px;
+}
+
+
 /*header*/
 header {
     position: fixed;
@@ -748,11 +762,7 @@ main {
 }
 
 @media (max-width: 500px) {
-    header {
-        height: 120px;
-    }
     .header__container {
-        height: 120px;
         padding: 0 16px;
     }
 }
