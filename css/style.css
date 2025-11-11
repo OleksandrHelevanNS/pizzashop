@@ -230,10 +230,10 @@ main {
 }
 
 .hero-section__description-block {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
 }
 
 .description-text__lightning-icon {
@@ -257,7 +257,7 @@ main {
     }
 }
 
-.arrow-wrapper {
+.hero-section__arrow-bottom, .hero-section__arrow-top {
     position: absolute;
     overflow: hidden;
     width: 0;
