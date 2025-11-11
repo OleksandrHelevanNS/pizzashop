@@ -48,7 +48,6 @@ html::-webkit-scrollbar-thumb {
 }
 
 
-
 /*header*/
 header {
     position: fixed;
@@ -266,12 +265,13 @@ main {
     animation: reveal 3s ease forwards;
 }
 
-.hero-section__arrow-top{
+.hero-section__arrow-top {
     left: 340px;
-    top:20px;
+    top: 20px;
 
 }
-.hero-section__arrow-bottom{
+
+.hero-section__arrow-bottom {
     bottom: -120px;
     left: 400px;
 }
@@ -286,7 +286,6 @@ main {
         opacity: 1;
     }
 }
-
 
 
 .hero-section__banner {
@@ -313,7 +312,8 @@ main {
     width: 160px;
     height: auto;
     position: absolute;
-    &:hover{
+
+    &:hover {
         transform: scale(1.1);
         transition: 0.5s ease;
     }
@@ -513,13 +513,61 @@ main {
     color: var(--primary-text-color);
 }
 
-.menu-content__cards-container {
+.menu-content__slider {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.menu-content__cards-container {
+    padding: 100px 0 0;
+    display: flex;
+    overflow-x: auto;
+}
+
+.menu-content__cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-content__cards-track {
+    display: flex;
+    flex-wrap: nowrap;
     gap: 120px 32px;
     justify-content: center;
-    padding-top: 100px;
 }
+
+.menu-slider__btn {
+    background: var(--orange-gradient);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.menu-slider__btn:hover {
+    transform: scale(1.1);
+}
+
+.menu-slider__btn.prev {
+    position: absolute;
+    left: -64px;
+}
+
+.menu-slider__btn.next {
+    position: absolute;
+    right: -64px;
+}
+
 
 .cards-container__pizza-card {
     width: 320px;
@@ -613,8 +661,8 @@ main {
     border-radius: inherit;
     padding: 2px;
     background: var(--orange-gradient);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box no-repeat,
-    linear-gradient(#fff 0 0) border-box no-repeat;
+    -webkit-mask: -webkit-linear-gradient(#fff 0 0, #fff 100%) content-box no-repeat,
+    -webkit-linear-gradient(#fff 0 0, #fff 0 100%) border-box no-repeat;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     transition: opacity 0.3s ease;
@@ -693,6 +741,29 @@ main {
     box-shadow: 0 4px 12px rgba(255, 100, 50, 0.3);
 }
 
+.menu-section__popular-pizzas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 128px;
+}
+
+.popular-pizzas__popular-pizza-banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 128px 0;
+    border-radius: 48px;
+    background: url(../img/popular-pizza-banner.jpg) center;
+    background-size: cover;
+}
+
+.popular-pizzas-banner__title {
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-3xl);
+}
+
 /*media*/
 @media (min-width: 1440px) {
     .header__container {
@@ -759,6 +830,15 @@ main {
 
     .hero__video-block {
         flex-direction: column-reverse;
+    }
+
+    .menu-slider__btn {
+        display: none;
+    }
+
+    .menu-content__cards-track {
+        gap: 24px;
+        padding: 0 24px;
     }
 }
 
