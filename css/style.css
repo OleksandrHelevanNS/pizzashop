@@ -1,8 +1,9 @@
 :root {
     --bg-color: #1E0D00;
     --primary-orange-color: #FF6432;
+    --box-shadow-popular-card-color: rgba(255, 100, 50, 0.59);
     --box-shadow-card-color: #FF6B000F;
-    --bg-card-color: #210A01;
+    --bg-card-color: #321104;
     --header-color: rgba(26, 12, 3, 0.85);
     --hover-box-shadow-color: rgba(255, 100, 50, 0.15);
     --primary-text-color: #fff;
@@ -475,7 +476,7 @@ main {
 .menu-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
     max-width: 1980px;
 }
@@ -534,10 +535,11 @@ main {
     display: none;
 }
 
-.menu-content__cards-track {
+.menu-content__cards-track{
     display: flex;
     flex-wrap: nowrap;
-    gap: 120px 32px;
+    padding: 32px 0;
+    gap: 32px;
     justify-content: center;
 }
 
@@ -569,7 +571,8 @@ main {
 }
 
 
-.cards-container__pizza-card {
+.cards-container__pizza-card,
+.popular-pizzas-container__pizza-card{
     width: 320px;
     padding: 100px 24px 24px;
     display: flex;
@@ -584,7 +587,9 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cards-container__pizza-card:hover {
+
+.cards-container__pizza-card:hover,
+.popular-pizzas-container__pizza-card:hover{
     transform: translateY(-6px);
     box-shadow: 0 12px 28px var(--hover-box-shadow-color);
 }
@@ -746,6 +751,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 24px 128px;
+    gap: 48px;
 }
 
 .popular-pizzas__popular-pizza-banner {
@@ -753,16 +759,88 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 128px 0;
+    padding: 140px 0;
     border-radius: 48px;
-    background: url(../img/popular-pizza-banner.jpg) center;
-    background-size: cover;
+    position: relative;
+    background: url(../img/popular-pizza-banner.jpg) center/cover no-repeat;
+    overflow: hidden;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 0;
+    }
+    & * {
+        position: relative;
+        z-index: 1;
+    }
 }
-
 .popular-pizzas-banner__title {
     font-weight: var(--font-weight-normal);
     font-size: var(--font-size-3xl);
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+.popular-pizzas-banner__title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.menu-section__popular-pizzas-container {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+    gap: 24px;
+    flex-wrap: nowrap;
+}
+
+
+.pizza-card__rating-mark {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    background: var(--orange-gradient);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.popular-pizzas-container__pizza-card:hover .pizza-card__rating-mark {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.pizza-card--best {
+    border: 2px solid var(--primary-orange-color);
+    position: relative;
+    z-index: 2;
+}
+
+.popular-pizzas-container:hover .popular-pizzas-container__pizza-card {
+    opacity: 0.5;
+}
+
+.popular-pizzas-container__pizza-card:hover {
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 0 32px var(--box-shadow-popular-card-color);
+    transform: scale(1.05);
+}
+
+.menu-section__popular-pizzas-container {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+    gap: 32px;
+    flex-wrap: nowrap;
+}
+
 
 /*media*/
 @media (min-width: 1440px) {
@@ -840,10 +918,36 @@ main {
         gap: 24px;
         padding: 0 24px;
     }
+    .menu-section__popular-pizzas-container {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+        padding: 128px 16px;
+    }
+
+    .popular-pizzas-container__pizza-card {
+        flex: 0 0 60vw;
+        scroll-snap-align: center;
+    }
+
+    .menu-section__popular-pizzas-container::-webkit-scrollbar {
+        display: none;
+    }
+    .hero-section__arrow-bottom{
+        right: 0;
+    }
+    html::-webkit-scrollbar {
+        width: 0;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 500px) {
     .header__container {
         padding: 0 16px;
     }
+
 }
