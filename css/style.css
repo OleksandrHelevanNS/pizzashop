@@ -535,7 +535,7 @@ main {
     display: none;
 }
 
-.menu-content__cards-track{
+.menu-content__cards-track {
     display: flex;
     flex-wrap: nowrap;
     padding: 32px 0;
@@ -572,7 +572,7 @@ main {
 
 
 .cards-container__pizza-card,
-.popular-pizzas-container__pizza-card{
+.popular-pizzas-container__pizza-card {
     width: 320px;
     padding: 100px 24px 24px;
     display: flex;
@@ -589,7 +589,7 @@ main {
 
 
 .cards-container__pizza-card:hover,
-.popular-pizzas-container__pizza-card:hover{
+.popular-pizzas-container__pizza-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px var(--hover-box-shadow-color);
 }
@@ -764,6 +764,7 @@ main {
     position: relative;
     background: url(../img/popular-pizza-banner.jpg) center/cover no-repeat;
     overflow: hidden;
+
     &::before {
         content: "";
         position: absolute;
@@ -771,11 +772,13 @@ main {
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 0;
     }
+
     & * {
         position: relative;
         z-index: 1;
     }
 }
+
 .popular-pizzas-banner__title {
     font-weight: var(--font-weight-normal);
     font-size: var(--font-size-3xl);
@@ -788,6 +791,7 @@ main {
     opacity: 1;
     transform: translateY(0);
 }
+
 .menu-section__popular-pizzas-container {
     display: flex;
     justify-content: center;
@@ -839,6 +843,87 @@ main {
     padding: 100px 0;
     gap: 32px;
     flex-wrap: nowrap;
+}
+
+/*events*/
+
+.events-section {
+    position: relative;
+}
+
+.events-section {
+    padding: 0 128px;
+}
+
+.events-section__events-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    "cooking cooking blog blog title title"
+    "pizza pizza pizza tour tour tour"
+    "coffee coffee instagram instagram place place";
+    gap: 20px;
+}
+
+.events-section__events-header {
+    grid-column: 2 / 3;
+    align-self: start;
+}
+
+
+.events-container__event-item--cooking {
+    background: url("../img/events/cooking.jpg") no-repeat center center;
+    grid-area: cooking;
+}
+
+.events-container__event-item--blog {
+    background: url("../img/events/blog.jpg") no-repeat center center;
+    grid-area: blog;
+}
+
+.events-container__event-item--pizza {
+    background: url("../img/events/pizza.jpg") no-repeat center center;
+    grid-area: pizza;
+}
+
+.events-container__event-item--tour {
+    background: url("../img/events/tour.jpg") no-repeat center center;
+    grid-area: tour;
+}
+
+.events-container__event-item--coffee {
+    background: url("../img/events/coffee.jpg") no-repeat center center;
+    grid-area: coffee;
+}
+
+.events-container__event-item--instagram {
+    background: url("../img/events/instagram.jpg") no-repeat center center;
+    grid-area: instagram;
+}
+
+.events-container__event-item--place {
+    background: url("../img/events/place.jpg") no-repeat center center;
+    grid-area: place;
+}
+
+.events-container__event-item--cooking,
+.events-container__event-item--blog,
+.events-container__event-item--pizza,
+.events-container__event-item--tour,
+.events-container__event-item--coffee,
+.events-container__event-item--instagram,
+.events-container__event-item--place {
+    padding: 80px 60px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.events__emoji--coffee, .events__emoji--eggs, .events__emoji--roll {
+    position: absolute;
+    display: none;
+    /*TODO */
 }
 
 
@@ -918,6 +1003,7 @@ main {
         gap: 24px;
         padding: 0 24px;
     }
+
     .menu-section__popular-pizzas-container {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
@@ -933,9 +1019,11 @@ main {
     .menu-section__popular-pizzas-container::-webkit-scrollbar {
         display: none;
     }
-    .hero-section__arrow-bottom{
+
+    .hero-section__arrow-bottom {
         right: 0;
     }
+
     html::-webkit-scrollbar {
         width: 0;
     }
@@ -949,5 +1037,4 @@ main {
     .header__container {
         padding: 0 16px;
     }
-
 }
