@@ -1229,10 +1229,6 @@ main {
     }
 }
 
-body.modal-open {
-    overflow: hidden;
-}
-
 /*media*/
 @media (min-width: 1440px) {
     .header__container {
