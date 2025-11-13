@@ -150,7 +150,7 @@ header {
 }
 
 
-.header__login {
+.header__login, .event-item__btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -847,12 +847,15 @@ main {
 
 /*events*/
 
-.events-section {
-    position: relative;
-}
 
 .events-section {
     padding: 0 128px;
+    position: relative;
+}
+
+.events-scroll-wrapper {
+    overflow-x: auto;
+    width: 100%;
 }
 
 .events-section__events-container {
@@ -863,13 +866,8 @@ main {
     "pizza pizza pizza tour tour tour"
     "coffee coffee instagram instagram place place";
     gap: 20px;
+    min-width: 1440px;
 }
-
-.events-section__events-header {
-    grid-column: 2 / 3;
-    align-self: start;
-}
-
 
 .events-container__event-item--cooking {
     background: url("../img/events/cooking.jpg") no-repeat center center;
@@ -906,26 +904,87 @@ main {
     grid-area: place;
 }
 
-.events-container__event-item--cooking,
-.events-container__event-item--blog,
-.events-container__event-item--pizza,
-.events-container__event-item--tour,
-.events-container__event-item--coffee,
-.events-container__event-item--instagram,
-.events-container__event-item--place {
-    padding: 80px 60px;
-    height: 320px;
+.event-item {
+    padding: 100px 32px 24px;
+    height: 280px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: inherit;
+    }
+
+    & > * {
+        width: 200px;
+        position: relative;
+        z-index: 1;
+    }
 }
 
-.events__emoji--coffee, .events__emoji--eggs, .events__emoji--roll {
+.event-item__title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-normal);
+}
+
+.events-container__events-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-area: title;
+    padding: 0 32px;
+    gap: 10px;
+}
+
+.events__description {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-light);
+    color: var(--secondary-text-color);
+}
+
+.event-item__btn {
+    transition: transform 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-5px);
+    }
+}
+
+.events__emoji--eggs, .events__emoji--roll, .events__emoji--coffee {
     position: absolute;
-    display: none;
-    /*TODO */
+    z-index: 1;
+    pointer-events: none;
 }
 
+.events__emoji--eggs {
+    width: 280px;
+    top: 160px;
+    left: -20px;
+}
+
+.events__emoji--roll {
+    width: 320px;
+    top: 30%;
+    right: 0;
+}
+
+.events__emoji--coffee {
+    width: 300px;
+    bottom: -120px;
+    left: 0;
+}
 
 /*media*/
 @media (min-width: 1440px) {
@@ -1030,6 +1089,26 @@ main {
 
     html::-webkit-scrollbar-thumb {
         border-radius: 0;
+    }
+
+    .events-container__events-header {
+        align-items: flex-start;
+        width: 50vw;
+    }
+    .events-section {
+        padding: 0 0 0 128px;
+    }
+    .events-section__events-container {
+        padding: 0 32px 0 0;
+        grid-template-areas:
+      "title title title title title title"
+      "cooking cooking cooking blog blog blog"
+      "pizza pizza pizza tour tour tour"
+      "coffee coffee instagram instagram place place";
+    }
+
+    .events__emoji--eggs, .events__emoji--roll, .events__emoji--coffee {
+        display: none;
     }
 }
 
