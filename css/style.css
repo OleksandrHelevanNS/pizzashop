@@ -990,7 +990,7 @@ main {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 11;
     overflow: hidden;
 }
 
@@ -1012,7 +1012,6 @@ main {
     position: relative;
     background: var(--bg-card-color);
     border-radius: 16px;
-    z-index: 10;
     padding: 24px;
     display: flex;
     gap: 24px;
@@ -1228,10 +1227,6 @@ main {
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-body.modal-open {
-    overflow: hidden;
 }
 
 /*media*/
