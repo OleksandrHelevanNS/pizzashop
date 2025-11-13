@@ -4,24 +4,30 @@ modal.innerHTML = `
     <div class="pizza-modal__overlay"></div>
     <div class="pizza-modal__content">
         <button class="pizza-modal__close">
-        <svg xmlns="http://www.w3.org/2000/svg" height="64px" viewBox="0 -960 960 960" width="64px" fill="#e3e3e3">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3">
         <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
         </button>
-        <img src="" alt="pizza" class="pizza-modal__img">
-        <h3 class="pizza-modal__title"></h3>
-        <div class="pizza-modal__sizes">
-            <p class="pizza-size">22</p>
-            <p class="pizza-size pizza-size--active">28</p>
-            <p class="pizza-size">33</p>
-        </div>
-        <div class="pizza-modal__ingredients"></div>
-         <div class="pizza-modal__calc">
+        
+        <div class="pizza-modal__right-block">
+            <img src="" alt="pizza" class="pizza-modal__img">
+            <h3 class="pizza-modal__title"></h3>
+             <div class="pizza-modal__calc">
             <button class="calc-btn minus">−</button>
             <span class="calc-total">1</span>
             <button class="calc-btn plus">+</button>
         </div>
-        <button class="pizza-modal__order">Add to Cart</button>
-    </div>
+        
+        </div>
+         <div class="pizza-modal__left-block">
+        <div class="pizza-modal__ingredients"></div>
+            <div class="pizza-modal__sizes">
+                <p class="pizza-size">22</p>
+                <p class="pizza-size pizza-size--active">28</p>
+                <p class="pizza-size">33</p>
+            </div>
+               <button class="pizza-modal__order">Add to Cart</button>
+        </div>
+     </div>
 `;
 document.body.appendChild(modal);
 
