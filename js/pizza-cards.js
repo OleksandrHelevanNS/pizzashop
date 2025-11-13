@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index === 0) card.classList.add("pizza-card--best");
 
         card.innerHTML = `
-            <p class="pizza-card__rating-mark">#${index + 1} [${pizza.rating}]</p>
+            <p class="pizza-card__rating-mark">#${index + 1}</p>
             <img src="${pizza.image}" alt="${pizza.name}" class="pizza-card__img"/>
             <p class="pizza-card__pizza-name">${pizza.name}</p>
             <p class="pizza-card__ingredients">Filling: ${pizza.ingredients.join(", ")}...</p>
