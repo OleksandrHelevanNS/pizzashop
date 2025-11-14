@@ -258,7 +258,9 @@ main {
     }
 }
 
-.hero-section__arrow-bottom, .hero-section__arrow-top {
+.hero-section__arrow-bottom,
+.hero-section__arrow-top,
+.about-section__arrow {
     position: absolute;
     overflow: hidden;
     width: 0;
@@ -269,7 +271,6 @@ main {
 .hero-section__arrow-top {
     left: 340px;
     top: 20px;
-
 }
 
 .hero-section__arrow-bottom {
@@ -309,10 +310,12 @@ main {
     height: 100%;
 }
 
-.banner__pizza-emoji, .banner__potatoes-emoji {
+.banner__pizza-emoji,
+.banner__potatoes-emoji {
     width: 160px;
     height: auto;
     position: absolute;
+    z-index: 1;
 
     &:hover {
         transform: scale(1.1);
@@ -849,6 +852,7 @@ main {
 .events-section {
     padding: 0 128px;
     position: relative;
+    margin-bottom: 128px;
 }
 
 .events-scroll-wrapper {
@@ -1229,6 +1233,86 @@ main {
     }
 }
 
+.about-section {
+    display: flex;
+    padding: 0 128px;
+    justify-content: space-around;
+}
+
+.about__about-description-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 680px;
+    position: relative;
+}
+
+.about-description-block__article {
+    color: var(--secondary-text-color);
+    font-size: var(--font-size-xl);
+    line-height: 1.5;
+    font-weight: var(--font-weight-normal);
+    width: 80%;
+}
+
+.about-description-block__images-block {
+    display: flex;
+
+    .images-block__pizza_img:nth-child(even) {
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+
+    .images-block__pizza_img:nth-child(odd) {
+        z-index: 1;
+        margin-top: 20px;
+    }
+}
+
+.images-block__pizza_img {
+    width: 200px;
+    margin-left: -120px;
+
+    &:first-child {
+        margin-left: -32px;
+    }
+}
+
+.about-section__arrow {
+    right: -40px;
+    top: 50%;
+}
+
+.about__banner-block {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.about__banner {
+    border-radius: 24px;
+    overflow: hidden;
+    width: 600px;
+    height: 600px;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(0, 0, 0, 0.2);
+    }
+}
+
+.about-banner__img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
 /*media*/
 @media (min-width: 1440px) {
     .header__container {
@@ -1341,7 +1425,7 @@ main {
     }
 
     .events-section {
-        padding: 0 0 0 128px;
+        padding: 0 128px 0 128px;
     }
 
     .events-section__events-container {
@@ -1362,15 +1446,56 @@ main {
     .pizza-modal__content {
         flex-direction: column;
         padding: 24px;
+
         .pizza-modal__left-block {
             gap: 12px;
             padding: 0;
         }
     }
+
+    .about-section {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 72px;
+        padding: 0 24px;
+    }
+
+    .about-section__arrow,
+    .hero-section__arrow-bottom,
+    .hero-section__arrow-top {
+        display: none;
+    }
+
+    .about__banner {
+        width: 400px;
+        height: 400px;
+    }
+
+    .images-block__pizza_img {
+        width: 180px;
+        margin-left: -120px;
+    }
+
+    .about__about-description-block {
+        align-items: center;
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 524px) {
+    .menu-section__menu-content,
+    .menu-section__popular-pizzas,
+    .events-section,
     .header__container {
         padding: 0 16px;
+    }
+
+    .banner__img {
+        width: 320px;
+        height: auto;
+    }
+
+    .about__banner {
+        width: 320px;
+        height: 320px;
     }
 }
