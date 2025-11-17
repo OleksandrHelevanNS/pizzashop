@@ -36,3 +36,13 @@ export function initFilters() {
         buttonsContainer.appendChild(btn);
     });
 }
+export function setActiveFilterButton(filter) {
+    document
+        .querySelectorAll(".buttons__menu-filter-btn")
+        .forEach(btn => {
+            btn.classList.toggle(
+                "buttons__menu-filter-btn--active",
+                btn.textContent === filter
+            );
+        });
+}
