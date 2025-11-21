@@ -1,6 +1,7 @@
 :root {
     --bg-color: #1E0D00;
     --primary-orange-color: #FF6432;
+    --contrast-orange-color: #ff9200;
     --box-shadow-popular-card-color: rgba(255, 100, 50, 0.59);
     --box-shadow-card-color: #FF6B000F;
     --bg-card-color: #321104;
@@ -454,7 +455,7 @@ main {
     border-radius: 32px;
     font-size: var(--font-size-l);
     font-weight: var(--font-weight-normal);
-    color: var(--primary-orange-color);
+    color: var(--contrast-orange-color);
     background: transparent;
     cursor: pointer;
     position: relative;
@@ -1347,12 +1348,12 @@ input[type="checkbox"]:checked::after {
     gap: 24px;
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-light);
-    color: var(--footer-text-color);
+    color: var(--secondary-text-color);
 }
 
 .footer-list__title {
     font-size: var(--font-size-2xl);
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
     margin-bottom: 8px;
 }
 
