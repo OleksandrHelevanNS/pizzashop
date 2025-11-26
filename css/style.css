@@ -108,30 +108,28 @@ header {
 }
 
 .header__nav {
-    height: 100%;
+    position: relative;
 }
 
 .nav__list {
-    height: 100%;
     display: flex;
-    align-items: center;
-    gap: 32px;
+    gap: 20px;
+    position: relative;
 }
 
 .nav__item {
     position: relative;
-    height: 40px;
 }
 
 .nav__link {
     display: flex;
     align-items: center;
-    padding: 4px;
     justify-content: center;
-    height: 100%;
+    padding: 4px;
+    height: 40px;
     color: var(--secondary-text-color);
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .nav__link:hover {
@@ -139,21 +137,19 @@ header {
     cursor: pointer;
 }
 
-.nav__link--active {
-    display: flex;
-    justify-content: center;
-}
-
-.nav__link--active::after {
-    content: "";
-    width: 6px;
-    height: 6px;
+.nav__indicator {
     position: absolute;
     bottom: -2px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: linear-gradient(90deg, #FFA228 0%, #FF6432 100%);
+    transition: left 0.3s ease, width 0.3s ease;
 }
 
+.nav__link--active {
+    color: var(--primary-text-color);
+}
 
 .header__login, .event-item__btn {
     display: flex;
