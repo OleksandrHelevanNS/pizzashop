@@ -1,4 +1,4 @@
-import { PizzaOrder } from "./PizzaOrder.js";
+import { PizzaOrder } from "./pizzaOrder.js";
 
 const modal = document.createElement("div");
 modal.classList.add("pizza-modal");
