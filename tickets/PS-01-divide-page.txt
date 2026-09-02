@@ -1,0 +1,10 @@
+Ticket: PS-1 — Divide page to subpages
+
+Description:
+Divide page to subpage: menu, aout us, etc. It should be also subpages, So landing pagе also keep this sections but I need like full version of each section as pages
+Use only js, css, html
+
+Acceptance criteria:
+- Short versions of pages in main page
+- Full versions of sections as a separate pages
+- Navigation

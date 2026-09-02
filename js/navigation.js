@@ -12,9 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLinks.forEach(link => {
         link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+            if (!href || !href.startsWith("#")) return;
+
             e.preventDefault();
 
-            const targetId = link.getAttribute("href").substring(1);
+            const targetId = href.substring(1);
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {

@@ -1451,6 +1451,59 @@ input[type="checkbox"]:checked::after {
     background: var(--orange-gradient);
 }
 
+/*subpages (menu.html, events.html, about.html)*/
+.section-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    background: var(--orange-gradient);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: var(--font-size-l);
+    color: var(--primary-text-color);
+    text-decoration: none;
+
+    &:hover {
+        scale: 1.05;
+        transition: 0.3s ease;
+    }
+}
+
+.page-section {
+    padding: 0 64px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page-section__intro {
+    max-width: 780px;
+    font-size: var(--font-size-l);
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+}
+
+.page-section__body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+}
+
+.page-section__body p {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-normal);
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+}
+
+.page-section__body h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-text-color);
+}
+
 
 /*media*/
 @media (max-width: 1440px) {
@@ -1692,7 +1745,8 @@ input[type="checkbox"]:checked::after {
     .menu-section__menu-content,
     .menu-section__popular-pizzas,
     .events-section,
-    .header__container {
+    .header__container,
+    .page-section {
         padding: 0 16px;
     }
 
